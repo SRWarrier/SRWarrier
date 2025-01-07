@@ -2,9 +2,9 @@
 **Product Manager | Software Developer | B.Com Graduate | ICSI Aspirant**
 
 ### 👨‍💻 About Me
-I'm a self-taught Software Developer and a B.Com graduate with a strong background in finance. Currently, I work as a Product Manager in a leading logistics company, where I leverage my cross-functional expertise to drive impactful solutions. Additionally, I am a trained Company Secretary Executive, which adds a layer of regulatory and compliance insight to my problem-solving approach.
+I'm a self-taught Software Developer and a B.Com graduate with a strong background in finance. Currently, I work as a Associate Product Manager in a logistics company, where I leverage my cross-functional exposure to drive impactful solutions. Additionally, I am a trained Company Secretary Executive, adding a layer of regulatory and compliance insight to my problem-solving approach.
 
-Over the years, I've seamlessly combined my exposure to technology, finance, and legal compliance to creatively solve complex problems, placing myself in a unique position to bridge gaps between technical, business, and operational teams. This interdisciplinary approach allows me to design and deliver solutions that are not only technically sound but also strategically aligned with organizational goals.
+Over the years, I've combined my exposure to technology, finance, and legal compliance to creatively solve complex problems, placing myself in a unique position to bridge gaps between technical, business, and operational teams. This interdisciplinary approach allows me to design and deliver solutions that are not only technically sound but also strategically aligned with organizational goals.
 
 🚀 **Passionate About:**
 - Solving real-world problems through technology
