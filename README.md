@@ -1,5 +1,5 @@
 ## Sarath Warrier
-**Product Manager | Software Developer | B.Com Graduate | ICSI Aspirant**
+**Product Manager | Software Developer | B.Com (Finance) Graduate | Company Secretary (CS-Executive)**
 
 ### About Me
 I'm a self-taught Software Developer and a B.Com graduate with a strong background in finance. Currently, I work as a Associate Product Manager in a logistics company, where I leverage my cross-functional exposure to drive impactful solutions. Additionally, I am a trained Company Secretary Executive, adding a layer of regulatory and compliance insight to my problem-solving approach.
