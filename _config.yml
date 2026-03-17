@@ -1,0 +1,27 @@
+title: Sarath Warrier
+email: 1sarathwarrier@gmail.com
+description: "Product Manager | Software Engineer | Business Analyst | Data Engineer | Compliance Officer"
+baseurl: ""
+url: "https://srwarrier.github.io"
+github_username: srwarrier
+twitter_username:
+linkedin_username: sarathwarrier
+
+permalink: /:title/
+
+theme: minima
+plugins:
+  - jekyll-feed
+
+markdown: kramdown
+
+collections:
+  roles:
+    output: true
+    permalink: /:name/
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+show_excerpts: true

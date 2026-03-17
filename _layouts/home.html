@@ -1,0 +1,151 @@
+---
+layout: default
+---
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Hi, I'm <span class="name">Sarath Warrier</span></h1>
+        <p>
+            I bridge the gap between product vision, software engineering,
+            business strategy, data insights, business finance and regulatory
+            compliance.
+        </p>
+        <div class="tagline">
+            <span class="tag">Product Manager</span>
+            <span class="tag">Software Engineer</span>
+            <span class="tag">Data Engineer</span>
+            <span class="tag">Business Finance</span>
+            <span class="tag">Corporate Compliance</span>
+        </div>
+        <div class="cta-buttons">
+            <a href="#roles" class="btn btn-primary">Explore My Work</a>
+            <a href="/about" class="btn btn-secondary">About Me</a>
+        </div>
+    </div>
+    <div class="hero-visual">
+            <img
+                src="assets/product.png"
+                class="profile-img default active"
+                alt="Profile"
+            />
+
+        </div>
+    </div>
+</section>
+
+<section id="roles" class="roles-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>What I Do</h2>
+            <p>
+                Bringing together technical expertise, strategic thinking, and
+                regulatory knowledge to deliver impactful solutions.
+            </p>
+        </div>
+
+        <div class="roles-grid">
+            <div class="role-card">
+                <h3>Product Manager</h3>
+                <p>
+                    Transforming ideas into successful products. I define
+                    roadmaps, prioritize features, and drive product strategy
+                    from conception to launch.
+                </p>
+                <div class="role-skills">
+                    <span class="role-skill">Roadmap Planning</span>
+                    <span class="role-skill">User Research</span>
+                    <span class="role-skill">Agile / Scrum</span>
+                    <span class="role-skill">Analytics</span>
+                </div>
+            </div>
+
+            <div class="role-card">
+                <h3>Software Engineer</h3>
+                <p>
+                    Building robust, scalable applications with clean code. From
+                    frontend interfaces to backend systems, I engineer solutions
+                    that perform.
+                </p>
+                <div class="role-skills">
+                    <span class="role-skill">Python</span>
+                    <span class="role-skill">Typescript</span>
+                    <span class="role-skill">React</span>
+                    <span class="role-skill">Node.js</span>
+                </div>
+            </div>
+
+            <div class="role-card">
+                <h3>Business Finance</h3>
+                <p>
+                    Business Data Management,Process Automation, Streamline
+                    Reporting while delivering data-driven FP&A insights to
+                    guide sustainable business growth.
+                </p>
+                <div class="role-skills">
+                    <span class="role-skill">Cash Flow Optimization</span>
+                    <span class="role-skill">Process Automation</span>
+                    <span class="role-skill">Data Analysis</span>
+                </div>
+            </div>
+
+            <div class="role-card">
+                <h3>Data Engineer</h3>
+                <p>
+                    Designing and building data pipelines that power insights. I
+                    transform raw data into actionable intelligence through
+                    robust engineering.
+                </p>
+                <div class="role-skills">
+                    <span class="role-skill">ETL / ELT</span>
+                    <span class="role-skill">Data Warehousing</span>
+                    <span class="role-skill">Apache Spark</span>
+                </div>
+            </div>
+
+            <div class="role-card">
+                <h3>Corporate Compliance</h3>
+                <p>
+                    Ensuring organizations meet regulatory requirements. I
+                    develop policies, conduct audits, and mitigate risks to
+                    maintain operational integrity.
+                </p>
+                <div class="role-skills">
+                    <span class="role-skill">Companies Act</span>
+                    <span class="role-skill">Taxation</span>
+                    <span class="role-skill">Securities Law</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="blog-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Latest</h2>
+            <p>
+                Thoughts on product, technology, business, and everything in
+                between.
+            </p>
+        </div>
+
+        <div class="blog-grid">
+            {% if site.posts.size > 0 %} {% for post in site.posts limit:3 %}
+            <a href="{{ post.url | relative_url }}" class="blog-card">
+                <div class="blog-meta">
+                    <span>{{ post.date | date: "%B %d, %Y" }}</span>
+                </div>
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
+            </a>
+            {% endfor %} {% else %}
+            <div class="empty-state">
+                <p>
+                    🦗 *Crickets*... It’s quiet in here. Too quiet. Check back
+                    once I’ve finished my coffee and written something!
+                </p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

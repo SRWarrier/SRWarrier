@@ -1,0 +1,506 @@
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap");
+
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #fafafa;
+    --text-primary: #0a0a0a;
+    --text-secondary: #525252;
+    --text-muted: #a3a3a3;
+    --border-color: #e5e5e5;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Satoshi",
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+header.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 1.25rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+nav.site-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav.site-nav a {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+}
+
+nav.site-nav a:hover {
+    color: var(--text-primary);
+}
+
+/* 1. Base Image Container */
+.image-area {
+    position: relative;
+    width: 100%; /* Changed to 100% to fill hero-visual */
+    aspect-ratio: 1 / 1; /* Keeps it square */
+}
+
+.profile-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition:
+        opacity 0.4s ease,
+        filter 0.3s ease;
+    opacity: 0;
+    filter: grayscale(100%); /* Keeps your grayscale style */
+}
+
+.profile-img.default {
+    opacity: 1;
+}
+
+.hero:has(.profile-trigger:hover) .profile-img.default {
+    opacity: 0;
+}
+
+.hero:has([data-target="software-img"]:hover) .software-img {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+.hero:has([data-target="finance-img"]:hover) .finance-img {
+    opacity: 1;
+    filter: grayscale(0%);
+}
+
+.hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 4rem;
+    align-items: center;
+    padding: 7rem 1.5rem 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-content h1 .name {
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.0625rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+
+.hero .tagline {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
+    margin-bottom: 2.5rem;
+    max-width: 100%;
+}
+
+.hero .tag {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.hero-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.hero-visual:hover img {
+    filter: grayscale(0%);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.btn-primary {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+.btn-primary:hover {
+    opacity: 0.8;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    border-color: var(--text-primary);
+    opacity: 1;
+}
+
+section {
+    padding: 4rem 0;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    font-size: 1.375rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.roles-section {
+    background: var(--bg-secondary);
+    margin: 0 1.5rem;
+    border-radius: 4px;
+    padding: 4rem;
+}
+
+.roles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+}
+
+.role-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.625rem;
+}
+
+.role-card p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.role-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+}
+
+.role-skill {
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.blog-section {
+    padding: 4rem 1.5rem 6rem;
+}
+
+.blog-section .container {
+    max-width: 900px;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.blog-card {
+    display: block;
+    padding: 1.25rem 0;
+}
+
+.blog-meta {
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.03em;
+}
+
+.blog-card h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.blog-card p {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    line-height: 1.6;
+}
+
+footer {
+    padding: 3rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+footer .container {
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+footer p {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.social-links a:hover {
+    color: var(--text-primary);
+}
+
+.page-content {
+    padding-top: 6rem;
+    min-height: 100vh;
+    max-width: 80vw;
+    margin: 0 auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.tag:hover {
+    text-decoration: underline;
+    color: black;
+    cursor: copy;
+}
+
+.page-content h1 {
+    font-size: 2.25rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+}
+
+.page-content h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.page-content h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.page-content ul,
+.page-content ol {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+}
+
+.page-content li {
+    margin-bottom: 0.375rem;
+    line-height: 1.7;
+}
+
+.page-content a {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-content a:hover {
+    border-color: var(--text-primary);
+}
+
+.post-card {
+    display: block;
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.post-card:first-child {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.75rem;
+}
+
+.post-card h2 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0.375rem;
+}
+
+.post-meta {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: left;
+    }
+
+    .hero-visual {
+        order: -1;
+        max-width: 240px;
+        margin: 0 auto;
+    }
+
+    .hero-content p {
+        max-width: 100%;
+    }
+
+    .roles-section {
+        margin: 0 1rem;
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding-top: 6rem;
+        gap: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 1.875rem;
+    }
+
+    .hero .tagline {
+        gap: 0.375rem 1rem;
+    }
+
+    .hero .tag {
+        white-space: nowrap;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .roles-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav.site-nav {
+        gap: 1.25rem;
+    }
+
+    footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
+        <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}" />
+        <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}" />
+        <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}" />
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="container">
+                <a class="site-title" href="{{ '/' | relative_url }}"
+                    >{{ site.title }}</a
+                >
+                <nav class="site-nav">
+                    <a href="{{ '/' | relative_url }}">Home</a>
+                    <a href="{{ '/about' | relative_url }}">About</a>
+                    <a href="{{ '/blog' | relative_url }}">Blog</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="page-content">{{ content }}</main>
+
+        <footer>
+            <div class="container">
+                <div class="social-links">
+                    {% if site.github_username %}
+                    <a
+                        href="https://github.com/{{ site.github_username }}"
+                        target="_blank"
+                        rel="noopener"
+                        >GitHub</a
+                    >
+                    {% endif %} {% if site.linkedin_username %}
+                    <a
+                        href="https://linkedin.com/in/{{ site.linkedin_username }}"
+                        target="_blank"
+                        rel="noopener"
+                        >LinkedIn</a
+                    >
+                    {% endif %} {% if site.email %}
+                    <a href="mailto:{{ site.email }}">Email</a>
+                    {% endif %}
+                </div>
+                <p>
+                    &copy; {{ site.time | date: '%Y' }} {{ site.title }}. All
+                    rights reserved.
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div class="container" style="padding-top: 6rem; padding-bottom: 4rem;">
+  <article class="page">
+    <header style="margin-bottom: 3rem;">
+      <h1 style="font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; margin-bottom: 1rem;">{{ page.title }}</h1>
+    </header>
+    
+    <div class="page-content-inner" style="max-width: 800px;">
+      {{ content }}
+    </div>
+  </article>
+</div>
+
+<style>
+.page-content-inner {
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+.page-content-inner h1, .page-content-inner h2, .page-content-inner h3 {
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+}
+.page-content-inner h2 { font-size: 1.75rem; }
+.page-content-inner h3 { font-size: 1.35rem; }
+.page-content-inner p { margin-bottom: 1.25rem; }
+.page-content-inner ul, .page-content-inner ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+.page-content-inner li { margin-bottom: 0.5rem; }
+.page-content-inner strong { color: var(--text-primary); }
+.page-content-inner a { color: var(--accent-primary); }
+.page-content-inner a:hover { color: var(--accent-secondary); }
+</style>
