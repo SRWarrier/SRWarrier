@@ -1,0 +1,275 @@
+---
+layout: default
+---
+
+<div class="projects-page">
+    <header style="margin-bottom: 3rem">
+        <h1
+            style="
+                font-family: &quot;Space Grotesk&quot;, sans-serif;
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            "
+        >
+            {{ page.title }}
+        </h1>
+    </header>
+
+    <main class="container">
+        {% for project in site.data.projects.repos %}
+        <article
+            class="project-item {% if forloop.index == 1 or forloop.index == 3 %}reverse{% endif %}"
+        >
+            {% if project.screenshot %}
+            <div class="project-image">
+                <img src="{{ project.screenshot }}" alt="{{ project.repo }}" />
+            </div>
+            {% endif %}
+
+            <div class="project-body">
+                <div class="project-header">
+                    <span class="project-number"
+                        >{{ forloop.index | stringformat: "%02d" }}</span
+                    >
+                    {% if project.languages %}
+                    <div class="project-languages">
+                        {% assign langs = project.languages | split: ',' %} {%
+                        for lang in langs %}
+                        <span>{{ lang | strip }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="project-content">
+                    {% assign readme_url = "https://raw.githubusercontent.com/"
+                    | append: site.github_username | append: "/" | append:
+                    project.repo | append: "/main/README.md" %} {{ readme_url |
+                    fetch | markdownify }}
+                </div>
+
+                <div class="project-link">
+                    <a
+                        href="https://github.com/{{ site.github_username }}/{{ project.repo }}"
+                        target="_blank"
+                        rel="noopener"
+                        >View on GitHub →</a
+                    >
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </main>
+</div>
+
+<style>
+    .projects-page {
+        padding-top: 5rem;
+    }
+
+    .projects-header {
+        padding: 4rem 1.5rem 3rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .projects-header h2 {
+        font-size: 0.75rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--text-muted);
+        margin-bottom: 0.5rem;
+    }
+
+    .projects-header h1 {
+        font-size: clamp(2rem, 4vw, 2.5rem);
+        font-weight: 500;
+        letter-spacing: -0.02em;
+    }
+
+    .project-item {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 3rem;
+        padding: 3rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .project-item:last-child {
+        border-bottom: none;
+    }
+
+    .project-item.reverse {
+        direction: rtl;
+    }
+
+    .project-item.reverse > * {
+        direction: ltr;
+    }
+
+    .project-image {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        background: var(--bg-secondary);
+    }
+
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .project-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .project-header {
+        display: flex;
+        align-items: baseline;
+        gap: 2rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .project-number {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        letter-spacing: 0.05em;
+    }
+
+    .project-languages {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.75rem;
+        color: var(--text-muted);
+    }
+
+    .project-languages span::after {
+        content: "·";
+        margin-left: 1rem;
+        color: var(--border-color);
+    }
+
+    .project-languages span:last-child::after {
+        display: none;
+    }
+
+    .project-content {
+        font-size: 0.9375rem;
+        line-height: 1.7;
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+    }
+
+    .project-content > *:first-child {
+        margin-top: 0;
+    }
+
+    .project-content h1 {
+        font-size: 1.375rem;
+        font-weight: 500;
+        color: var(--text-primary);
+        margin-bottom: 0.75rem;
+        letter-spacing: -0.01em;
+    }
+
+    .project-content h2 {
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: var(--text-primary);
+        margin-top: 1.5rem;
+        margin-bottom: 0.625rem;
+    }
+
+    .project-content h3 {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--text-primary);
+        margin-top: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .project-content p {
+        margin-bottom: 0.875rem;
+    }
+
+    .project-content ul,
+    .project-content ol {
+        margin-bottom: 0.875rem;
+        padding-left: 1.5rem;
+    }
+
+    .project-content li {
+        margin-bottom: 0.375rem;
+    }
+
+    .project-content code {
+        background: var(--bg-secondary);
+        padding: 0.125rem 0.375rem;
+        font-size: 0.875em;
+    }
+
+    .project-content pre {
+        background: var(--bg-secondary);
+        padding: 1rem;
+        overflow-x: auto;
+        margin-bottom: 1rem;
+    }
+
+    .project-content pre code {
+        background: none;
+        padding: 0;
+    }
+
+    .project-content img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .project-link a {
+        font-size: 0.8125rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+    }
+
+    .project-link a:hover {
+        color: var(--text-primary);
+    }
+
+    @media (max-width: 900px) {
+        .project-item {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .project-item.reverse {
+            direction: ltr;
+        }
+
+        .project-image {
+            aspect-ratio: 16 / 9;
+        }
+
+        .project-header {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .project-languages {
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-languages span::after {
+            display: none;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .projects-header {
+            padding: 3rem 1rem 2rem;
+        }
+    }
+</style>

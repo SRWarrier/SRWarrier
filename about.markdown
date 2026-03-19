@@ -4,11 +4,11 @@ title: About
 permalink: /about/
 ---
 
-Hello! I'm **Sarath Warrier**, a multi-disciplinary professional with expertise spanning product management, software engineering, business analysis, data engineering, and compliance.
+Hello! I'm **Sarath Warrier**, a multi-disciplinary problem solver with experience spanning product management, software engineering, finance, business analysis, data engineering, and compliance.
 
 ## My Journey
 
-With experience across multiple domains, I've developed a unique ability to bridge gaps between technical teams and business stakeholders. I believe the best solutions come from understanding the full picture—from customer needs to technical constraints to regulatory requirements.
+My career is built on the belief that the best solutions require a holistic view-from technical limits to fiscal realities to regulatory requirements. I thrive at the intersection of different domains, possessing the rare 'knack' for speaking both business, finance and engineering. I am constantly sharpening my skills not just to lead, but to **serve as a versatile resource capable of pitching in** wherever a project needs it most.
 
 ## What I Bring to the Table
 
@@ -23,6 +23,10 @@ I build robust, scalable applications. Whether it's frontend, backend, or full-s
 ### Business Analysis
 
 I translate business needs into technical requirements. My analytical mindset helps identify opportunities and drive process improvements.
+
+### Finance
+
+I bridge the gap between technical roadmaps and financial objectives. From budget forecasting and ROI analysis to understanding the fiscal implications of technical debt, I ensure that innovation is always aligned with the bottom line.
 
 ### Data Engineering
 
@@ -47,4 +51,4 @@ I'm always interested in discussing new projects, creative ideas, or opportuniti
 
 - **Email**: [1sarathwarrier@gmail.com](mailto:1sarathwarrier@gmail.com)
 - **GitHub**: [github.com/srwarrier](https://github.com/srwarrier)
-- **LinkedIn**: [linkedin.com/in/sarath-warrier](https://linkedin.com/in/sarath-warrier)
+- **LinkedIn**: [linkedin.com/in/sarathwarrier](https://linkedin.com/in/sarathwarrier)

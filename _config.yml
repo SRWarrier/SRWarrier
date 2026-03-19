@@ -12,6 +12,8 @@ permalink: /:title/
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-fetch
+  - jekyll-github-metadata
 
 markdown: kramdown
 
@@ -25,3 +27,4 @@ sass:
   style: compressed
 
 show_excerpts: true
+repository: srwarrier/VA-U
