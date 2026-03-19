@@ -88,61 +88,46 @@ nav.site-nav a:hover {
     color: var(--text-primary);
 }
 
-/* 1. Base Image Container */
-.image-area {
+.hero {
+    min-height: 100vh;
     position: relative;
-    width: 100%; /* Changed to 100% to fill hero-visual */
-    aspect-ratio: 1 / 1; /* Keeps it square */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem;
 }
 
-.profile-img {
+.hero-visual {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-visual img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition:
-        opacity 0.4s ease,
-        filter 0.3s ease;
-    opacity: 0;
-    filter: grayscale(100%); /* Keeps your grayscale style */
+    object-position: center;
+    shape-outside: circle();
 }
 
-.profile-img.default {
-    opacity: 1;
-}
-
-.hero:has(.profile-trigger:hover) .profile-img.default {
-    opacity: 0;
-}
-
-.hero:has([data-target="software-img"]:hover) .software-img {
-    opacity: 1;
-    filter: grayscale(0%);
-}
-
-.hero:has([data-target="finance-img"]:hover) .finance-img {
-    opacity: 1;
-    filter: grayscale(0%);
-}
-
-.hero {
-    min-height: 100vh;
+.hero-content {
+    position: relative;
+    z-index: 1;
     display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 4rem;
-    align-items: center;
-    padding: 7rem 1.5rem 4rem;
-    max-width: 1100px;
-    margin: 0 auto;
+    grid-template-columns: 1fr 200px 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1400px;
+    align-items: start;
+    padding: 0px 20px;
+    padding-top: 15vh;
 }
 
 .hero-content h1 {
-    font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+    font-size: clamp(2.5rem, 5vw, 5rem);
     font-weight: 500;
     line-height: 1.1;
-    margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
 }
 
@@ -150,43 +135,46 @@ nav.site-nav a:hover {
     font-weight: 700;
 }
 
-.hero-content p {
-    font-size: 1.0625rem;
+.hero-content > p {
+    font-size: 0.9375rem;
     color: var(--text-secondary);
-    line-height: 1.7;
-    max-width: 100%;
-    margin-bottom: 2rem;
+    line-height: 1.6;
+    text-align: right;
+    max-width: 400px;
+    justify-self: end;
+    padding-top: 0.5rem;
 }
 
 .hero .tagline {
-    display: inline-flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1.25rem;
-    margin-bottom: 2.5rem;
-    max-width: 100%;
+    display: flex;
 }
 
-.hero .tag {
-    font-size: 0.8125rem;
-    color: var(--text-muted);
-    white-space: nowrap;
+.right-section {
+    grid-column: 3/ 4;
 }
 
-.hero-visual img {
-    width: 100%;
-    height: auto;
-    display: block;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
+.right-section .cta-container {
+    display: flex;
+    justify-content: flex-end;
 }
 
-.hero-visual:hover img {
-    filter: grayscale(0%);
+.left-section .cta-container {
+    display: flex;
+    justify-content: flex-start;
 }
 
 .cta-buttons {
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    bottom: 3rem;
+    z-index: 2;
     display: flex;
-    gap: 1rem;
+    justify-content: space-between;
+}
+
+.cta-buttons .btn {
+    flex: none;
 }
 
 .btn {
@@ -201,6 +189,7 @@ nav.site-nav a:hover {
 .btn-primary {
     background: var(--text-primary);
     color: var(--bg-primary);
+    width: 120px;
 }
 
 .btn-primary:hover {
@@ -440,52 +429,42 @@ footer p {
     margin-bottom: 0.5rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .hero {
+        padding: 4rem 1rem;
+        align-items: flex-start;
+    }
+
+    .hero-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1rem;
+        align-items: start;
+        padding-top: 30vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content > p {
         text-align: left;
-    }
-
-    .hero-visual {
-        order: -1;
-        max-width: 240px;
-        margin: 0 auto;
-    }
-
-    .hero-content p {
         max-width: 100%;
+        justify-self: start;
     }
 
-    .roles-section {
-        margin: 0 1rem;
-        padding: 3rem 2rem;
+    .cta-buttons {
+        left: 1rem;
+        right: 1rem;
+        bottom: 2rem;
+    }
+
+    .cta-buttons .btn {
+        padding: 0.625rem 1rem;
+        font-size: 0.75rem;
     }
 }
 
 @media (max-width: 640px) {
-    .hero {
-        padding-top: 6rem;
-        gap: 1.5rem;
-    }
-
-    .hero h1 {
-        font-size: 1.875rem;
-    }
-
-    .hero .tagline {
-        gap: 0.375rem 1rem;
-    }
-
-    .hero .tag {
-        white-space: nowrap;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
     .roles-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
