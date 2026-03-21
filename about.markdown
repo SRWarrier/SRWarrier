@@ -8,7 +8,13 @@ Hello! I'm **Sarath Warrier**, a multi-disciplinary problem solver with experien
 
 ## My Journey
 
-My career is built on the belief that the best solutions require a holistic view-from technical limits to fiscal realities to regulatory requirements. I thrive at the intersection of different domains, possessing the rare 'knack' for speaking both business, finance and engineering. I am constantly sharpening my skills not just to lead, but to **serve as a versatile resource capable of pitching in** wherever a project needs it most.
+Early in my journey, I discovered a strong inclination toward software development. While life circumstances often pulled me in different directions, I worked in legal and compliance, finance and accounts and admin, but I never let that technical spark fade. I learned to balance my immediate professional responsibilities with a relentless drive to build technical solutions for the problems right in front of me.
+
+My technical path truly began out of necessity. I was spending hours on the manual verification of trademark and copyright publications, so I decided to automate the process to save my own sanity. A quick word of advice for anyone reading this: be careful what you automate, or you might find yourself with no work left to do! That project was my "aha" moment, but it also taught me a hard lesson: a "bare" script is not a solution. To build software that actually lasts, I needed to understand architecture. I began diving into open-source projects, dissecting them to understand how truly scalable systems are built. This curiosity led me to develop my first real application for secretarial augmentation, which officially catapulted me into the world of serious development.
+
+Since then, every role I’ve taken has been defined by a technical lens. Whether I’m budinding advanced software in a programming language or just a simple spreadsheet: My process is consistent: understand the current state, scout for improvements, develop reliable systems, and then deploy and test. My journey hasn't been a straight line, but that is exactly why it’s valuable. By working across different domains, I’ve learned that code is only as effective as the problem it solves.
+
+**A solution without a strong enough problem is just a convenience. To gain respect for what you do, you have to get deep into the problems and solve what actually matters.**
 
 ## What I Bring to the Table
 

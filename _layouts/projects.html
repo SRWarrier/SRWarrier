@@ -4,22 +4,18 @@ layout: default
 
 <div class="projects-page">
     <header style="margin-bottom: 3rem">
-        <h1
-            style="
+        <h1 style="
                 font-family: &quot;Space Grotesk&quot;, sans-serif;
                 font-size: 2.5rem;
                 margin-bottom: 1rem;
-            "
-        >
+            ">
             {{ page.title }}
         </h1>
     </header>
 
     <main class="container">
         {% for project in site.data.projects.repos %}
-        <article
-            class="project-item {% if forloop.index == 1 or forloop.index == 3 %}reverse{% endif %}"
-        >
+        <article class="project-item {% if forloop.index == 1 or forloop.index == 3 %}reverse{% endif %}">
             {% if project.screenshot %}
             <div class="project-image">
                 <img src="{{ project.screenshot }}" alt="{{ project.repo }}" />
@@ -28,9 +24,7 @@ layout: default
 
             <div class="project-body">
                 <div class="project-header">
-                    <span class="project-number"
-                        >{{ forloop.index | stringformat: "%02d" }}</span
-                    >
+                    <span class="project-number">{{ forloop.index | stringformat: "%02d" }}</span>
                     {% if project.languages %}
                     <div class="project-languages">
                         {% assign langs = project.languages | split: ',' %} {%
@@ -40,21 +34,17 @@ layout: default
                     </div>
                     {% endif %}
                 </div>
+                <div class="project-title">
+                    {{project.title}}
+                </div>
 
                 <div class="project-content">
-                    {% assign readme_url = "https://raw.githubusercontent.com/"
-                    | append: site.github_username | append: "/" | append:
-                    project.repo | append: "/main/README.md" %} {{ readme_url |
-                    fetch | markdownify }}
+                    {{project.description}}
                 </div>
 
                 <div class="project-link">
-                    <a
-                        href="https://github.com/{{ site.github_username }}/{{ project.repo }}"
-                        target="_blank"
-                        rel="noopener"
-                        >View on GitHub →</a
-                    >
+                    <a href="https://github.com/{{ site.github_username }}/{{ project.repo }}" target="_blank"
+                        rel="noopener">View on GitHub →</a>
                 </div>
             </div>
         </article>
@@ -103,7 +93,7 @@ layout: default
         direction: rtl;
     }
 
-    .project-item.reverse > * {
+    .project-item.reverse>* {
         direction: ltr;
     }
 
@@ -163,7 +153,7 @@ layout: default
         margin-bottom: 1.5rem;
     }
 
-    .project-content > *:first-child {
+    .project-content>*:first-child {
         margin-top: 0;
     }
 

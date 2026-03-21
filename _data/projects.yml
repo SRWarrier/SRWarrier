@@ -1,7 +1,10 @@
 ---
 repos:
   - repo: VA-U
-    languages: python, javascript, typescript
-    screenshot: /assets/project-1.jpg
+    title: VA-U
+    description: A transport management system 
+    languages: Python, Typescript
   - repo: Briefcase_Desktop
-    languages: python, javascript
+    title: Breifcase-Desktop
+    description: A secretarial augmentation desktop application with direct connect to MCA web services. Automatically create minutes, reports and more.
+    languages: Python, QT4

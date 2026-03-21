@@ -137,7 +137,7 @@ nav.site-nav a:hover {
     font-weight: 700;
 }
 
-.hero-content > p {
+.hero-content>p {
     font-size: 0.9375rem;
     color: var(--text-secondary);
     line-height: 1.6;
@@ -160,6 +160,7 @@ nav.site-nav a:hover {
     display: flex;
     justify-content: flex-start;
 }
+
 .action-container {
     display: flex;
     display: none;
@@ -336,6 +337,11 @@ footer p {
     font-size: 0.75rem;
 }
 
+.project-title {
+    font-weight: bold;
+    font-size: medium;
+}
+
 .social-links {
     display: flex;
     gap: 1.25rem;
@@ -452,12 +458,14 @@ footer p {
     .hero {
         flex-direction: column;
         padding: 1rem 0.2rem;
-        min-height: auto; /* Allow content to dictate height */
+        min-height: auto;
+        /* Allow content to dictate height */
     }
 
     /* 2. Make the visual (image) appear at the top */
     .hero-visual {
-        position: relative; /* Change from absolute to sit in flow */
+        position: relative;
+        /* Change from absolute to sit in flow */
         width: 100%;
         display: flex;
         justify-content: center;
@@ -466,7 +474,8 @@ footer p {
 
     .hero-visual img {
         width: 100%;
-        max-width: 360px; /* Keep it from getting too huge */
+        max-width: 360px;
+        /* Keep it from getting too huge */
         height: auto;
         aspect-ratio: 3/4;
         object-fit: cover;
@@ -476,7 +485,8 @@ footer p {
     .hero-content {
         position: relative;
         display: flex;
-        flex-direction: column; /* Stack name above description */
+        flex-direction: column;
+        /* Stack name above description */
         gap: 1.5rem;
         padding: 0;
         width: 100%;
@@ -488,14 +498,15 @@ footer p {
         text-align: left;
     }
 
-    .hero-content > p {
+    .hero-content>p {
         text-align: left;
         max-width: 100%;
         padding-top: 0;
     }
 
     .cta-buttons {
-        position: relative; /* Change from absolute */
+        position: relative;
+        /* Change from absolute */
         margin-top: 2rem;
         left: 0;
         right: 0;
@@ -539,6 +550,7 @@ footer p {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
     .hero-visual img {
         display: relative;
         width: 360px;
